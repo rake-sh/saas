@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: chris
+  password: root
+
+development:
+  <<: *default
+  database: ce_development
+
+test:
+  <<: *default
+  database: ce_test
+
+production:
+  <<: *default
+  database: ce_production
+  username: ce
+  password: <%= ENV['CE_DATABASE_PASSWORD'] %>
