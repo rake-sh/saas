@@ -9,6 +9,8 @@ class SubdomainBlank
 	end
 end
 Rails.application.routes.draw do
+  get 'projects/index'
+
 	constraints(SubdomainPresent) do
 		root 'projects#index', as: :subdomain_root
 		devise_for :users
